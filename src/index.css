@@ -1,13 +1,162 @@
-body {
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f4f8;
+  color: #333;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+/* App Container */
+.weather-app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.weather-app:before {
+  content: '';
+  background: url('./assets/background.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Input Section */
+.input-section {
+  text-align: center;
+  padding: 1rem;
+}
+
+.input-section input {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8f8f8;
+}
+
+::placeholder {
+  color: #f8f8f8;
+}
+
+/* Weather Data Container */
+.weather-container {
+
+  max-width: 700px;
+  height: 700px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 0%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Section */
+.weather-header {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.city-name {
+  margin: 4rem;
+}
+
+.temperature {
+  display: flex;
+  align-items: center;
+  /* Vertically centers the items within the container */
+}
+
+.icon {
+  margin-left: 10px;
+  /* Adds spacing between the temperature and the icon */
+}
+
+.header-section {
+  text-align: center;
+}
+
+.weather-summary {
+  position: relative;
+  transform-origin: 0 0;
+}
+
+/* Bottom Section */
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  position: relative;
+  top: 0;
+}
+
+.details-section {
+  display: flex;
+  flex-direction: row;
+  /* Horizontal layout */
+  justify-content: space-evenly;
+  /* Even spacing between the child elements */
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  gap: 1rem;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+/* Footer - Overlay */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.footer p {
+  margin: 0;
+  flex: 1;
+  font-size: 1rem;
 }
